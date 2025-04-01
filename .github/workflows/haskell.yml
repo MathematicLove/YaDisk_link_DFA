@@ -20,7 +20,7 @@ jobs:
 
     - uses: actions/setup-haskell@v1
       with:
-        ghc-version: '9.2.7'
+        ghc-version: '9.2.8'  # Update to a valid GHC version
         cabal-version: '3.0'
 
     - name: Cache
