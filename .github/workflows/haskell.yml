@@ -1,3 +1,8 @@
+The job is failing because it attempts to install GHC version 9.2.4, which is not available. To resolve this issue, you should update the workflow to use a valid and available GHC version.
+
+Here is the updated `.github/workflows/haskell.yml` file:
+
+```yaml
 name: Haskell CI
 
 on:
@@ -22,7 +27,7 @@ jobs:
       # Use a valid GHC version available in GHCup
       - uses: actions/setup-haskell@v1
         with:
-          ghc-version: '9.2.4'  # Change this to a valid version
+          ghc-version: '9.4.3'  # Updated to a valid version
           cabal-version: '3.0'
 
       - name: Cache
@@ -47,3 +52,6 @@ jobs:
 
       - name: Run tests
         run: cabal test all
+```
+
+Make sure to commit this updated file to your repository and re-run the workflow.
