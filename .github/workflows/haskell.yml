@@ -15,14 +15,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Обновляем ghcup до последней версии, чтобы получить актуальный список доступных версий GHC
+      # Upgrade ghcup to the latest version to get the latest list of available GHC versions
       - name: Upgrade ghcup
         run: ghcup upgrade
 
-      # Используем GHC версии 9.8.4, которая соответствует вашей локальной среде
+      # Use a valid GHC version available in GHCup
       - uses: actions/setup-haskell@v1
         with:
-          ghc-version: '9.8.4'
+          ghc-version: '9.2.4'  # Change this to a valid version
           cabal-version: '3.0'
 
       - name: Cache
