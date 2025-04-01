@@ -11,13 +11,12 @@ permissions:
 
 jobs:
   build:
-    # Используем официальный Docker-образ с GHC 9.8.4
+    runs-on: ubuntu-latest
     container:
       image: haskell:9.8.4
     steps:
       - uses: actions/checkout@v4
 
-      # Кэширование кэша cabal (учтите, что домашний каталог внутри контейнера — /root)
       - name: Cache cabal packages
         uses: actions/cache@v3
         env:
